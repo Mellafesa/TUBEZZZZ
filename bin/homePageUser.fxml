@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.geometry.Insets?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="homePageUserController">
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="homepageUserController">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-    <Label fx:id="lblUserName" style="-fx-font-size: 18px;"/>
+    <Label fx:id="lblUserName" style="-fx-font-size: 18px;" />
     <TableView fx:id="tableBeasiswa">
         <columns>
-            <TableColumn text="Nama Beasiswa"/>
-            <TableColumn text="Jumlah Dana"/>
-            <TableColumn text="Deskripsi"/>
-            <TableColumn text="Status"/>
+            <TableColumn prefWidth="91.33337593078613" text="Nama Beasiswa" />
+            <TableColumn prefWidth="68.66661834716797" text="Jumlah Dana" />
+            <TableColumn text="Deskripsi" />
+            <TableColumn text="Status" />
         </columns>
     </TableView>
-    <Button text="Daftar Beasiswa" onAction="#handleDaftarBeasiswa"/>
+    <Button onAction="#handleDaftarBeasiswa" text="Daftar Beasiswa" />
 </VBox>

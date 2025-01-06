@@ -21,7 +21,7 @@ public class homePageUserController {
     
     @FXML
     private void handleDaftarBeasiswa(ActionEvent event) {
-        penerima.daftar_beasiswa();
+        // penerima.daftar_beasiswa();
     }
     
     public void setPenerima(MahasiswaClass penerima) {
@@ -30,6 +30,6 @@ public class homePageUserController {
     }
     
     private void updateUserInfo() {
-        lblUserName.setText(penerima.nama);
+        // lblUserName.setText(penerima.nama);
     }
 }
