@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="651.0" prefWidth="707.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="homePageAdminController">
+     
+        <!-- TableView for Beasiswa data -->
+     <TableView fx:id="tableBeasiswa" layoutX="32.0" layoutY="74.0" prefHeight="323.0" prefWidth="427.0">
+         <columns>
+             <TableColumn fx:id="colIDBeasiswa" prefWidth="50.000003814697266" text="ID " />
+             <TableColumn fx:id="colNamaBeasiswa" prefWidth="86.66667938232422" text="Nama " />
+             <TableColumn fx:id="colJumlahDana" prefWidth="86.00001525878906" text="Jumlah Dana" />
+         <TableColumn prefWidth="93.33331298828125" text="Jenis Beasiswa" />
+             <TableColumn fx:id="colDeskripsi" prefWidth="107.99998982747394" text="Deskripsi" />
+         </columns>
+     </TableView>
+   <TableView layoutX="32.0" layoutY="450.0" prefHeight="181.0" prefWidth="427.0">
+     <columns>
+       <TableColumn prefWidth="75.0" text="C1" />
+       <TableColumn prefWidth="75.0" text="C2" />
+     </columns>
+   </TableView>
+   <Label layoutX="32.0" layoutY="50.0" text="Data Beasiswa">
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font>
+   </Label>
+   <Label layoutX="32.0" layoutY="422.0" text="Data Pegajuan Beasiswa">
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font>
+   </Label>
+   <TextField fx:id="txtIDBeasiswa" layoutX="475.0" layoutY="97.0" prefHeight="27.0" prefWidth="192.0" style="-fx-background-radius: 100;" />
+   <TextField layoutX="475.0" layoutY="154.0" prefHeight="27.0" prefWidth="192.0" style="-fx-background-radius: 100;" />
+   <Label layoutX="475.0" layoutY="74.0" text="ID Beasiswa" />
+   <Label layoutX="475.0" layoutY="132.0" text="Nama Beasiswa" />
+   <Label layoutX="475.0" layoutY="192.0" text="Jumlah Dana" />
+   <TextField layoutX="475.0" layoutY="215.0" prefHeight="27.0" prefWidth="192.0" style="-fx-background-radius: 100;" />
+   <Label layoutX="32.0" layoutY="14.0" text="Halaman Admin BeaSmart">
+      <font>
+         <Font name="System Bold" size="18.0" />
+      </font>
+   </Label>
+   <Label layoutX="476.0" layoutY="318.0" text="Deskripsi" />
+   <TextArea layoutX="476.0" layoutY="341.0" prefHeight="57.0" prefWidth="200.0" />
+   <Label layoutX="475.0" layoutY="252.0" text="Jenis Beasiswa" />
+   <ComboBox layoutX="476.0" layoutY="276.0" prefHeight="27.0" prefWidth="192.0" style="-fx-background-radius: 100;" />
+    
+</AnchorPane>
