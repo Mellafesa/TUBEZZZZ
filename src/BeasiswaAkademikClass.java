@@ -2,8 +2,8 @@ public class BeasiswaAkademikClass extends BeasiswaClass {
     private float min_IPK;
  
     
-    public BeasiswaAkademikClass(int id_beasiswa, String nama_beasiswa, float jumlah_dana, String deskripsi, float min_IPK) {
-        super(id_beasiswa, nama_beasiswa, jumlah_dana, deskripsi);
+    public BeasiswaAkademikClass(int id_beasiswa, String nama_beasiswa, float jumlah_dana, String jenis_beasiswa, String deskripsi, float min_IPK) {
+        super(id_beasiswa, nama_beasiswa, jumlah_dana, jenis_beasiswa, deskripsi);
         this.min_IPK = min_IPK;
     }
     
@@ -19,6 +19,9 @@ public class BeasiswaAkademikClass extends BeasiswaClass {
     public void setMin_IPK(float min_IPK) {
         this.min_IPK = min_IPK;
     }
+
+    
+    
 
     
 

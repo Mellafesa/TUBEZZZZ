@@ -31,16 +31,18 @@ public class BeasiswaFileManager {
                 if(b instanceof BeasiswaAkademikClass) {
                     BeasiswaAkademikClass bea = (BeasiswaAkademikClass)b;
                     writer.write(String.format("%d;%s;%.2f;%s;%.2f",
-                        bea.getnama_beasiswa(),
-                        bea.getjumlah_dana(),
-                        bea.getdeskripsi(),
+                        bea.getId_beasiswa(),
+                        bea.getNama_beasiswa(),
+                        bea.getJumlah_dana(),
+                        bea.getDeskripsi(),
                         bea.getMin_IPK()));
                 } else if(b instanceof BeasiswaNonAkademikClass) {
                     BeasiswaNonAkademikClass bea = (BeasiswaNonAkademikClass)b;
                     writer.write(String.format("%d;%s;%.2f;%s;%s",
-                        bea.getnama_beasiswa(),
-                        bea.getjumlah_dana(), 
-                        bea.getdeskripsi(),
+                        bea.getId_beasiswa(),
+                        bea.getNama_beasiswa(),
+                        bea.getJumlah_dana(), 
+                        bea.getDeskripsi(),
                         bea.getBidang_beasiswa()));
                 }
                 writer.newLine();
@@ -52,11 +54,34 @@ public class BeasiswaFileManager {
     }
  
     public static ArrayList<BeasiswaClass> loadBeasiswa() {
+        // System.err.println("FLAGOOOO 1");
         ArrayList<BeasiswaClass> beasiswa = new ArrayList<>();
+        // System.err.println("FLAGOOOO 2");
         beasiswa.addAll(loadFromFile(AKADEMIK_FILE, true));
+        // System.err.println("FLAGOOOO 3");
         beasiswa.addAll(loadFromFile(NONAKADEMIK_FILE, false));
+        // System.err.println("FLAGOOOO 4");
         return beasiswa;
     }
+
+    public static ArrayList<PengajuanClass> loadPengajuan() {
+        ArrayList<PengajuanClass> pengajuanList = new ArrayList<>();
+        try (BufferedReader reader = new BufferedReader(new FileReader("PENGAJUAN_FILE"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(";");
+                int idPengajuan = Integer.parseInt(parts[0]);
+                int idBeasiswa = Integer.parseInt(parts[1]);
+                String nimMhs = parts[2];
+                boolean accepted = Boolean.parseBoolean(parts[3]);
+                pengajuanList.add(new PengajuanClass(idPengajuan, idBeasiswa, nimMhs, accepted));
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading file: " + e.getMessage());
+        }
+        return pengajuanList;
+    }
+
  
     private static ArrayList<BeasiswaClass> loadFromFile(String filename, boolean isAkademik) {
         ArrayList<BeasiswaClass> beasiswa = new ArrayList<>();
@@ -70,13 +95,16 @@ public class BeasiswaFileManager {
                         parts[1],
                         Float.parseFloat(parts[2]),
                         parts[3],
+                        parts[4],
                         Float.parseFloat(parts[4])));
                 } else {
+                    System.err.println(parts);
                     beasiswa.add(new BeasiswaNonAkademikClass(
                         Integer.parseInt(parts[0]),
                         parts[1],
                         Float.parseFloat(parts[2]),
                         parts[3],
+                        parts[4],
                         parts[4]));
                 }
             }

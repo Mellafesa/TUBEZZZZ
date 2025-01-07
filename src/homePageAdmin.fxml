@@ -10,22 +10,22 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="651.0" prefWidth="707.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="homePageAdminController">
+<AnchorPane onMouseClicked="#showBeasiswa" prefHeight="651.0" prefWidth="707.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="homePageAdminController">
      
         <!-- TableView for Beasiswa data -->
-     <TableView fx:id="tableBeasiswa" layoutX="32.0" layoutY="74.0" prefHeight="323.0" prefWidth="420.0">
+     <TableView fx:id="tableBeasiswa" layoutX="32.0" layoutY="74.0" onMouseClicked="#showBeasiswa" prefHeight="323.0" prefWidth="420.0">
          <columns>
              <TableColumn fx:id="colIDBeasiswa" prefWidth="50.000003814697266" text="ID " />
              <TableColumn fx:id="colNamaBeasiswa" prefWidth="86.66667938232422" text="Nama " />
              <TableColumn fx:id="colJumlahDana" prefWidth="86.00001525878906" text="Jumlah Dana" />
-         <TableColumn prefWidth="93.99993896484375" text="Jenis Beasiswa" />
-             <TableColumn fx:id="colDeskripsi" prefWidth="98.66668701171875" text="Deskripsi" />
+         <TableColumn fx:id="colJenisBeasiswa" prefWidth="93.99993896484375" text="Jenis Beasiswa" />
+             <TableColumn fx:id="colDeskripsi" prefWidth="98.66668701171875" text="Persyaratan" />
          </columns>
      </TableView>
-   <TableView layoutX="32.0" layoutY="450.0" prefHeight="181.0" prefWidth="427.0">
+   <TableView fx:id="tablePengajuan" layoutX="32.0" layoutY="450.0" prefHeight="181.0" prefWidth="427.0">
      <columns>
        <TableColumn fx:id="colIDPengajuan" prefWidth="110.0" text="ID Pengajuan" />
-       <TableColumn prefWidth="103.33334350585938" text="ID " />
+       <TableColumn fx:id="colIDBeasiswaDipilih" prefWidth="103.33334350585938" text="ID Beasiswa" />
          <TableColumn fx:id="colNIM" prefWidth="107.3333740234375" text="NIM Mahasiswa" />
          <TableColumn fx:id="colStatus" prefWidth="104.00002034505206" text="Status" />
      </columns>
@@ -60,11 +60,19 @@
          <Font name="System Bold" size="12.0" />
       </font>
    </Button>
-   <Button fx:id="btnUpdate" layoutX="543.0" layoutY="382.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="63.0" style="-fx-background-radius: 100; -fx-background-color: #FF9D23;" text="Update" textFill="WHITE">
+   <Button fx:id="btnUpdate" layoutX="543.0" layoutY="382.0" mnemonicParsing="false" onAction="#updateBeasiswa" prefHeight="27.0" prefWidth="63.0" style="-fx-background-radius: 100; -fx-background-color: #FF9D23;" text="Update" textFill="WHITE">
       <font>
          <Font name="System Bold" size="12.0" />
       </font>
    </Button>
-   <Button fx:id="btnHapus" layoutX="614.0" layoutY="382.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="63.0" style="-fx-background-radius: 100; -fx-background-color: #FF9D23;" text="Hapus" textFill="WHITE" />
+   <Button fx:id="btnHapus" layoutX="614.0" layoutY="382.0" mnemonicParsing="false" onAction="#deleteBeasiswa" prefHeight="27.0" prefWidth="63.0" style="-fx-background-radius: 100; -fx-background-color: #FF9D23;" text="Hapus" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Button>
+   <Button fx:id="btnVerifikasi" layoutX="468.0" layoutY="527.0" mnemonicParsing="false" onAction="#verifikasiPengajuan" prefHeight="27.0" prefWidth="213.0" style="-fx-background-radius: 100; -fx-background-color: #FF9D23;" text="Verifikasi" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font>
+   </Button>
     
 </AnchorPane>

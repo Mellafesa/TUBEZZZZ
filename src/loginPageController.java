@@ -48,8 +48,11 @@ public class loginPageController {
     private void openDashboard(String userType, String fxmlFile) {
         try {
             // Load file FXML dashboard
+            
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+            System.err.println(loader);
             Parent root = loader.load();
+            System.err.println("TES FLAG2 ==================");
             
             // Buat scene baru
             Stage stage = new Stage();
@@ -59,7 +62,6 @@ public class loginPageController {
             // Tutup window login
             Stage loginStage = (Stage) txtUsername.getScene().getWindow();
             loginStage.close();
-            
             // Tampilkan dashboard
             stage.show();
             
