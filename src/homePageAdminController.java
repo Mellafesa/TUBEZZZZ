@@ -71,6 +71,8 @@ public class homePageAdminController {
         initializePengajuan();
     }
 
+
+    // Fungsi untuk mengelola data beasiswa oleh admin (syntax di file homePageAdminController.java)
     private void initializeBeasiswa() {
         ArrayList<BeasiswaClass> loadedBeasiswa = BeasiswaFileManager.loadBeasiswa();
         beasiswaList = FXCollections.observableArrayList(loadedBeasiswa);
@@ -86,6 +88,7 @@ public class homePageAdminController {
         refreshTables();
     }
 
+    // Fungsi untuk mengelola data pengajuan beasiswa oleh admin (syntax di file homePageAdminController.java)
     private void initializePengajuan() {
         ArrayList<PengajuanClass> loadedPengajuan = PengajuanFileManager.loadPengajuan();
         pengajuanList = FXCollections.observableArrayList(loadedPengajuan);
@@ -98,6 +101,7 @@ public class homePageAdminController {
         colStatus.setCellValueFactory(new PropertyValueFactory<>("accepted"));
     }
 
+    //Fungsi untuk menambahkan data beasiswa oleh admin (syntax ada di file homePageAdminController.java)
     @FXML
     private void addBeasiswa(ActionEvent event) {
         try {
@@ -142,6 +146,12 @@ public class homePageAdminController {
             tableBeasiswa.refresh();
             clearBeasiswa();
 
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Add beasiswa");
+                alert.setContentText("Beasiswa berhasil ditambahkan!");
+                alert.showAndWait();
+                tableBeasiswa.refresh();
+
         } catch (MissingFieldException | NumberFormatException e) {
             showError(e.getMessage());
         }
@@ -154,6 +164,8 @@ public class homePageAdminController {
         jenisBeasiswaBox.getSelectionModel().clearSelection();
         txtDeskripsi.clear();
     }
+
+    //Fungsi untuk mengedit data beasiswa (syntax ada di file homePageAdminController.java)
 
     @FXML
     private void updateBeasiswa(ActionEvent event) {
@@ -190,12 +202,20 @@ public class homePageAdminController {
 
             // Bersihkan input form setelah update
             clearBeasiswa();
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Update beasiswa");
+                alert.setContentText("Beasiswa berhasil di update!");
+                alert.showAndWait();
+                tableBeasiswa.refresh();
+
         } catch (MissingFieldException | TaskNotSelectedException | NumberFormatException e) {
             showError(e.getMessage());
         }
 
     }
 
+    //Fungsi untuk menghapus data beasiswa (syntax ada di file homePageAdminController.java)
     @FXML
     private void deleteBeasiswa(ActionEvent event) {
         try {
@@ -206,6 +226,12 @@ public class homePageAdminController {
             }
             tableBeasiswa.getItems().remove(selected);
             BeasiswaFileManager.saveBeasiswa(new ArrayList<>(tableBeasiswa.getItems()));
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Delete beasiswa");
+                alert.setContentText("Beasiswa berhasil dihapus!");
+                alert.showAndWait();
+                tableBeasiswa.refresh();
         } catch (TaskNotSelectedException e) {
             showError(e.getMessage());
         }
@@ -224,6 +250,7 @@ public class homePageAdminController {
         }
     }
 
+    //Fungsi untuk melihat data beasiswa (syntax ada di file homePageAdminController.java)
     private void refreshTables() {
         ArrayList<BeasiswaClass> loadedBeasiswa = BeasiswaFileManager.loadBeasiswa();
         beasiswaList = FXCollections.observableArrayList(loadedBeasiswa);
@@ -244,9 +271,11 @@ public class homePageAdminController {
             // Simpan perubahan ke file
             PengajuanFileManager.savePengajuan(new ArrayList<>(pengajuanList));
 
-            // TODOS: 
-            // 1. TRACK STATUS APAKAH BEASISWA UDAH ADA YANG AMBIL ATAU BELUM
-            // 2. SHOW NAMA MAHASISWA YANG AMBIL DARI GABUNGIN 2 TABEL
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Verifikasi pengajuan");
+                alert.setContentText("Pengajuan disetujui!");
+                alert.showAndWait();
+                tableBeasiswa.refresh();
 
 
         } catch (TaskNotSelectedException e) {

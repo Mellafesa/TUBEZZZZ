@@ -7,15 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="397.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="homePageUserController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="397.0" prefWidth="600.0" style="-fx-background-color: #FFF5E9;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="homePageUserController">
    <children>
       <Label layoutX="26.0" layoutY="21.0" text="BeaSmart ">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <TableView fx:id="tableBeasiswa" layoutX="26.0" layoutY="62.0" onMouseClicked="#showBeasiswa" prefHeight="249.0" prefWidth="544.0">
+      <TableView fx:id="tableBeasiswa" layoutX="26.0" layoutY="62.0" prefHeight="249.0" prefWidth="544.0">
         <columns>
           <TableColumn fx:id="colNamaBeasiswa" prefWidth="118.6666259765625" text="Nama Beasiswa" />
           <TableColumn fx:id="colJumlahDana" prefWidth="125.33334350585938" text="Jumlah Dana" />

@@ -20,12 +20,7 @@ public class AdminClass {
         this.level = level;
     }
 
-    
-    public void verifikasi_mahasiswa() {
-        // Implementasi verifikasi mahasiswa
         
-    }
-    
     public boolean login_admin() {
         // Implementasi login untuk admin
         return false;

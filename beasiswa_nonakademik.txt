@@ -1,2 +1,1 @@
-1;Beasiswa Olahraga;8000000.00;Sepak Bola;Sepak Bola
 2;Beasiswa Seni;6000000.00;Musik;Musik

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane onMouseClicked="#showBeasiswa" prefHeight="651.0" prefWidth="707.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="homePageAdminController">
+<AnchorPane onMouseClicked="#showBeasiswa" prefHeight="651.0" prefWidth="707.0" style="-fx-background-color: #FFF5E9;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="homePageAdminController">
      
         <!-- TableView for Beasiswa data -->
      <TableView fx:id="tableBeasiswa" layoutX="32.0" layoutY="74.0" onMouseClicked="#showBeasiswa" prefHeight="323.0" prefWidth="420.0">
@@ -40,21 +40,21 @@
          <Font name="System Bold" size="14.0" />
       </font>
    </Label>
-   <TextField fx:id="txtIDBeasiswa" layoutX="463.0" layoutY="73.0" prefHeight="27.0" prefWidth="213.0" style="-fx-background-radius: 100;" />
-   <TextField fx:id="txtNamaBeasiswa" layoutX="463.0" layoutY="130.0" prefHeight="27.0" prefWidth="213.0" style="-fx-background-radius: 100;" />
+   <TextField fx:id="txtIDBeasiswa" layoutX="463.0" layoutY="73.0" prefHeight="27.0" prefWidth="213.0" promptText="Masukkan ID Beasiswa" style="-fx-background-radius: 100;" />
+   <TextField fx:id="txtNamaBeasiswa" layoutX="463.0" layoutY="130.0" prefHeight="27.0" prefWidth="213.0" promptText="Masukkan Nama Beasiswa" style="-fx-background-radius: 100;" />
    <Label layoutX="463.0" layoutY="50.0" text="ID Beasiswa" />
    <Label layoutX="463.0" layoutY="108.0" text="Nama Beasiswa" />
    <Label layoutX="463.0" layoutY="168.0" text="Jumlah Dana" />
-   <TextField fx:id="txtJumlahDana" layoutX="463.0" layoutY="191.0" prefHeight="27.0" prefWidth="213.0" style="-fx-background-radius: 100;" />
+   <TextField fx:id="txtJumlahDana" layoutX="463.0" layoutY="191.0" prefHeight="27.0" prefWidth="213.0" promptText="Masukkan Jumlah Dana" style="-fx-background-radius: 100;" />
    <Label layoutX="32.0" layoutY="14.0" text="Halaman Admin BeaSmart">
       <font>
          <Font name="System Bold" size="18.0" />
       </font>
    </Label>
    <Label layoutX="464.0" layoutY="291.0" text="Deskripsi" />
-   <TextArea fx:id="txtDeskripsi" layoutX="464.0" layoutY="314.0" prefHeight="57.0" prefWidth="213.0" />
+   <TextArea fx:id="txtDeskripsi" layoutX="464.0" layoutY="314.0" prefHeight="57.0" prefWidth="213.0" promptText="Dapat berupa persyaratan" />
    <Label layoutX="463.0" layoutY="228.0" text="Jenis Beasiswa" />
-   <ComboBox fx:id="jenisBeasiswaBox" layoutX="464.0" layoutY="252.0" prefHeight="27.0" prefWidth="213.0" style="-fx-background-radius: 100;" />
+   <ComboBox fx:id="jenisBeasiswaBox" layoutX="464.0" layoutY="252.0" prefHeight="27.0" prefWidth="213.0" promptText="Pilih Jenis Beasiswa" style="-fx-background-radius: 100;" />
    <Button fx:id="btnTambah" layoutX="465.0" layoutY="382.0" mnemonicParsing="false" onAction="#addBeasiswa" prefHeight="27.0" prefWidth="68.0" style="-fx-background-radius: 100; -fx-background-color: #FF9D23;" text="Tambah" textFill="WHITE">
       <font>
          <Font name="System Bold" size="12.0" />

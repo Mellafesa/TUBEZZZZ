@@ -34,13 +34,7 @@ public class homePageUserController {
 
     @FXML
     private void initialize() {
-        // System.err.println("MELLAAAAAAAAAAAAAA1");
-        // ArrayList<BeasiswaClass> loadedBeasiswa = BeasiswaFileManager.loadBeasiswa();
-        // System.err.println("MELLAAAAAAAAAAAAAA2");
-        // beasiswaList = FXCollections.observableArrayList(loadedBeasiswa);
-        // System.err.println("MELLAAAAAAAAAAAAAA3");
-        // tableBeasiswa.setItems(beasiswaList);
-        // System.err.println("MELLAAAAAAAAAAAAAA4");
+        
         ArrayList<BeasiswaClass> loadedBeasiswa = BeasiswaFileManager.loadBeasiswa();
         beasiswaList = FXCollections.observableArrayList(loadedBeasiswa);
         tableBeasiswa.setItems(beasiswaList);
@@ -54,6 +48,7 @@ public class homePageUserController {
         refreshTables();
     }
 
+    //FUngsi untuk mengajukan beasiswa (syntax ini ada di file homePageUserController.java)
     @FXML
     void addPengajuan(ActionEvent event) {
         try{
@@ -79,7 +74,7 @@ public class homePageUserController {
         }
         
     }
-
+    //Fungsi untuk melihat data beasiswa yang diambil dari database txt (syntax ini ada di file homePageUserController.java)
     private void refreshTables() {
         ArrayList<BeasiswaClass> loadedBeasiswa = BeasiswaFileManager.loadBeasiswa();
         beasiswaList = FXCollections.observableArrayList(loadedBeasiswa);

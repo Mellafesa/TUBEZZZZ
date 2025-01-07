@@ -8,7 +8,7 @@ public class BeasiswaNonAkademikClass extends BeasiswaClass {
     
     @Override
     public void daftar_beasiswa() {
-        // Implementasi pendaftaran beasiswa SMA
+        
     }
 
     public String getBidang_beasiswa() {

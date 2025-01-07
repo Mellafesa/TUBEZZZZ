@@ -18,6 +18,7 @@ public class loginPageController {
     @FXML
     private TextField txtUsername;
 
+    //Fungsi untuk login user(admin&mahasiswa (syntax ini ada di file loginPageController.java))
     @FXML
     void LoginFunction(ActionEvent event) {
         String username = txtUsername.getText();
@@ -29,19 +30,19 @@ public class loginPageController {
             return;
         }
         
-        // Cek login sebagai admin
-        if (username.equals("admin") && password.equals("admin123")) {
+        // Login Admin
+        if (username.equals("admin") && password.equals("123")) {
             openDashboard("Admin", "homePageAdmin.fxml");
             return;
         }
         
-        // Cek login sebagai user
-        if (username.equals("user") && password.equals("user123")) {
+        // Login User
+        if (username.equals("mahasiswa") && password.equals("123")) {
             openDashboard("User", "homePageUser.fxml");
             return;
         }
         
-        // Jika login gagal
+        // Kalo gagal
         showAlert("Error", "Login Gagal", "Username atau password salah!");
     }
     
@@ -52,8 +53,7 @@ public class loginPageController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
             System.err.println(loader);
             Parent root = loader.load();
-            System.err.println("TES FLAG2 ==================");
-            
+                     
             // Buat scene baru
             Stage stage = new Stage();
             stage.setTitle(userType + " Dashboard");
@@ -62,7 +62,7 @@ public class loginPageController {
             // Tutup window login
             Stage loginStage = (Stage) txtUsername.getScene().getWindow();
             loginStage.close();
-            // Tampilkan dashboard
+    
             stage.show();
             
         } catch (IOException e) {

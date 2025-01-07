@@ -54,13 +54,13 @@ public class BeasiswaFileManager {
     }
  
     public static ArrayList<BeasiswaClass> loadBeasiswa() {
-        // System.err.println("FLAGOOOO 1");
+  
         ArrayList<BeasiswaClass> beasiswa = new ArrayList<>();
-        // System.err.println("FLAGOOOO 2");
+    
         beasiswa.addAll(loadFromFile(AKADEMIK_FILE, true));
-        // System.err.println("FLAGOOOO 3");
+    
         beasiswa.addAll(loadFromFile(NONAKADEMIK_FILE, false));
-        // System.err.println("FLAGOOOO 4");
+       
         return beasiswa;
     }
 
